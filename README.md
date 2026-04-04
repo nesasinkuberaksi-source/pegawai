@@ -1,0 +1,2 @@
+# pegawai
+SMP NEGERI 1 SINDANG
