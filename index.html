@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Tenaga Pendidik dan Kependidikan</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+
+/* OPENING */
+#opening{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  color:#00ccff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  font-family:monospace;
+}
+
+.terminal{
+  background:rgba(0,0,0,0.7);
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 0 20px #00ccff;
+  width:320px;
+}
+
+.terminal p{
+  margin:5px 0;
+  font-size:14px;
+}
+
+/* BACKGROUND */
+body{
+  color:white;
+  background: linear-gradient(270deg, #0f172a, #1e293b, #020617);
+  background-size:600% 600%;
+  animation:bgMove 20s ease infinite;
+}
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* PARTICLES */
+#particles{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
+}
+.header-box{
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(15px);
+  padding:25px 40px;
+  border-radius:20px;
+  text-align:center;
+}
+
+/* GRID */
+.guru-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:30px;
+}
+
+/* CARD */
+.guru-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  overflow:hidden;
+  transition:0.4s;
+}
+.guru-card:hover{transform:translateY(-10px) scale(1.03)}
+
+.guru-img{display:flex;justify-content:center;padding:10px}
+.guru-img img{width:100%;max-height:250px;object-fit:contain}
+.guru-info{text-align:center;padding:15px}
+
+/* MUSIC */
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:rgba(0,0,0,0.6);
+  border:none;
+  color:white;
+  font-size:20px;
+  padding:15px;
+  border-radius:50%;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<div id="opening">
+  <div class="terminal">
+    <p>> Initializing system...</p>
+    <p id="line1"></p>
+    <p id="line2"></p>
+    <p id="line3"></p>
+    <p id="line4"></p>
+    <p id="line5"></p>
+  </div>
+</div>
+
+<canvas id="particles"></canvas>
+
+<!-- AUDIO -->
+<audio autoplay loop id="bg-music">
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+  <div class="header-box">
+    <h1>DATA PEGAWAI SMP NEGERI 1 SINDANG</h1>
+    <p>Tenaga Pendidik Dan Tenaga Kependidikan</p>
+  </div>
+</header>
+
+<div class="guru-grid">
+
+<!-- DATA GURU LENGKAP -->
+<div class="guru-card"><div class="guru-img"><img src="rudi.jpg.jpeg"></div><div class="guru-info"><h3>Rudi Muchlis</h3><p>Kepala Sekolah</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="CICIK.jpeg"></div><div class="guru-info"><h3>Cicik Komalasari, S.Pd.</h3><p>Bahasa Inggris</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="DEDEN.jpeg"></div><div class="guru-info"><h3>Deden Suhendar, S.Pd.</h3><p>Bahasa Inggris</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="ARIF.jpeg"></div><div class="guru-info"><h3>Arif Nurhidayat, S.Pd.</h3><p>Bahasa Inggris</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="IIS.jpeg"></div><div class="guru-info"><h3>Iis Herawati, S.Pd.</h3><p>PPKn</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="nunuy.jpg"></div><div class="guru-info"><h3>Nunuy Ratna Wulan, S.Pd., M.P.</h3><p>Matematika</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="memen.jpeg"></div><div class="guru-info"><h3>Paturohman, S.Pd.</h3><p>Matematika</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="YOYO.jpeg"></div><div class="guru-info"><h3>Yoyo Rohaya, S.Pd.</h3><p>IPS</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="RITA.jpeg"></div><div class="guru-info"><h3>Rita Djahara, S.Pd.</h3><p>IPS</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="NENI.jpeg"></div><div class="guru-info"><h3>Nuraeni, S.Pd.</h3><p>Bahasa Sunda</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="SANTI.jpeg"></div><div class="guru-info"><h3>Santi Rosmalasari, S.Pd.</h3><p>IPA</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="DEDE.jpeg"></div><div class="guru-info"><h3>Dede Sumiati, S.Pd.</h3><p>IPA</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="NOPII.jpeg"></div><div class="guru-info"><h3>Diah Novitasari, S.Pd.</h3><p>PAI</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="DEDI.jpeg"></div><div class="guru-info"><h3>Dedi Kusbandi, S.Pd.I.</h3><p>PAI</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="SUSI.jpeg"></div><div class="guru-info"><h3>Susi Susilawati, S.Pd.</h3><p>Bahasa Indonesia</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="ATIK.jpeg"></div><div class="guru-info"><h3>Atik Supartika, S.Pd.</h3><p>Bahasa Indonesia</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="TENDI.jpeg"></div><div class="guru-info"><h3>Tendi Sugiantoro, S.Pd.</h3><p>PJOK</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="ATRIS.jpeg"></div><div class="guru-info"><h3>Atris Difstania, S.Pd.</h3><p>PJOK</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="PURNAMA.jpeg"></div><div class="guru-info"><h3>Purnama, S.Pd.</h3><p>Informatika</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="NYAI.jpeg"></div><div class="guru-info"><h3>Nyai Fathyatul A, S.Pd.</h3><p>Seni Budaya</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="ASEP.jpeg"></div><div class="guru-info"><h3>Asep Mujahideung, S.Pd.</h3><p>BK</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="EKA.jpeg"></div><div class="guru-info"><h3>Eka Amin Hidayat, S.H., S.Pd.</h3><p>BK</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="EEM.jpeg"></div><div class="guru-info"><h3>Eem Maemunah</h3><p>Tata Usaha</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="AAH.jpeg"></div><div class="guru-info"><h3>Sutiah, A.Md., M.Kom.</h3><p>Tata Usaha</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="DEA.jpeg"></div><div class="guru-info"><h3>Dea, S.E.</h3><p>Tata Usaha</p></div></div>
+<div class="guru-card"><div class="guru-img"><img src="AZID.jpeg"></div><div class="guru-info"><h3>Abdul Azid</h3><p>Tata Usaha</p></div></div>
+
+</div>
+
+<button class="music-btn" onclick="toggleMusic()" id="musicBtn">🔊</button>
+
+<script>
+// MUSIC
+const music = document.getElementById("bg-music");
+const btn = document.getElementById("musicBtn");
+document.addEventListener("click",()=>music.play(),{once:true});
+function toggleMusic(){
+  music.paused ? (music.play(), btn.innerHTML="🔊") : (music.pause(), btn.innerHTML="🔇");
+}
+
+// SYSTEM CHECK
+const lines = [
+  "> Checking system files...",
+  "> Loading database...",
+  "> Connecting server...",
+  "> Verifying access...",
+  "> Access granted ✔"
+];
+
+let i = 0;
+function runSystem(){
+  if(i < lines.length){
+    document.getElementById("line"+(i+1)).innerHTML = lines[i];
+    i++;
+    setTimeout(runSystem, 800);
+  } else {
+    setTimeout(()=>{
+      document.getElementById("opening").style.display="none";
+    }, 800);
+  }
+}
+setTimeout(runSystem, 800);
+
+// PARTICLES SMOOTH
+const c = document.getElementById("particles");
+const x = c.getContext("2d");
+
+function resize(){
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+}
+resize();
+
+let particles = [];
+
+for(let i=0;i<100;i++){
+  particles.push({
+    x: Math.random()*c.width,
+    y: Math.random()*c.height,
+    r: Math.random()*2+1,
+    dx: (Math.random()-0.5)*1.5,
+    dy: (Math.random()-0.5)*1.5
+  });
+}
+
+function draw(){
+  x.clearRect(0,0,c.width,c.height);
+
+  x.shadowBlur = 10;
+  x.shadowColor = "#00ccff";
+
+  particles.forEach(p=>{
+    x.beginPath();
+    x.fillStyle="rgba(0,200,255,0.8)";
+    x.arc(p.x,p.y,p.r,0,Math.PI*2);
+    x.fill();
+
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if(p.x<0||p.x>c.width)p.dx*=-1;
+    if(p.y<0||p.y>c.height)p.dy*=-1;
+  });
+
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<particles.length;j++){
+      let dx = particles[i].x - particles[j].x;
+      let dy = particles[i].y - particles[j].y;
+      let dist = dx*dx + dy*dy;
+
+      if(dist < 8000){
+        x.strokeStyle="rgba(0,200,255,0.15)";
+        x.beginPath();
+        x.moveTo(particles[i].x,particles[i].y);
+        x.lineTo(particles[j].x,particles[j].y);
+        x.stroke();
+      }
+    }
+  }
+
+  x.shadowBlur = 0;
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+window.addEventListener("resize", resize);
+</script>
+
+</body>
+</html>
